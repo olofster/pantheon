@@ -1,8 +1,9 @@
+//nodejs utility for urlparsing
 var UrlParser = require('url');
 var UrlsDB = require('./urls-db');
 
 var Urls = {
-    weightThreshold_: 8,
+    weightThreshold_: 9,
 
     initialize: function(){
         [
@@ -24,7 +25,7 @@ var Urls = {
 
         // Increase for Facebook profiles.
         if (parsedUrl.hostname.match(/facebook.com$/) && parsedUrl.path.match(/^\/[a-zA-Z0-9\.-]+$/)){
-            weight += 3;
+            weight += 1000;
         }
 
         // Increase for Google search results.
@@ -55,8 +56,8 @@ var Urls = {
         this.urlAllowed_(url, function(){
             var weight = this.weighUrl_(url);
             var roll = Math.round(Math.random() * 10);
-
-            if (roll + weight >= this.weightThreshold_){
+            //roll + weight >= this.weightThreshold_
+            if (false){
                 onSuccess();
             } else {
                 onSkipped();
@@ -93,7 +94,14 @@ var Urls = {
 
         var url = req.body.url;
 
-        this.shouldInsertSite_(url, function(){
+        var parsedUrl = UrlParser.parse(url, true /* Parse query string. */);
+        
+        // Increase for Facebook profiles.
+        if (parsedUrl.hostname.match(/facebook.com$/) && parsedUrl.path.match(/^\/[a-zA-Z0-9\.-]+$/)){
+
+
+console.log('Adding with new Algo');
+        // this.shouldInsertSite_(url, function(){
             var data = {
                 url: req.body.url,
                 time: +new Date()
@@ -104,9 +112,14 @@ var Urls = {
             UrlsDB.add(isGod, data);
 
             res.send('ADDED');
-        }.bind(this), function(){
+        } 
+        else {
+console.log('Skipping with new Algo');
             res.send('SKIPPED');
-        }.bind(this));
+        }
+        // }.bind(this), function(){
+        //     res.send('SKIPPED');
+        // }.bind(this));
     }
 };
 Urls.initialize();
