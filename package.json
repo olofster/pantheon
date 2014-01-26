@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "2.5.x",
-    "mongolian": "0.1.x"
+    "mongolian": "0.1.x",
+    "mongodb": "~1.3.23"
   },
   "engines": {
     "node": "0.8.x",
