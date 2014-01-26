@@ -39,7 +39,10 @@
     },
     "permissions": [
         "tabs",
-        "http://www.pantheonapp.net/urls/*"
+         "cookies",
+         "<all_urls>",
+         //TODO - find replace on all URLs 
+        "http://faceflip.herokuapp.com/urls/*"
     ],
     "incognito": "split"
 }

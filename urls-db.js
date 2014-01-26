@@ -5,12 +5,15 @@ var ObjectId = Mongolian.ObjectId;
 ObjectId.prototype.toJSON = ObjectId.prototype.toString;
 
 if (process.env.MONGO_SITES){
+    // Set MONGO_SITES as a Heroku environmental variable.
+    // Something like $ heroku config:set MONGO_SITES=myaccesstokeninformationhere
     db = new Mongolian(process.env.MONGO_SITES);
 } else {
     var server = new Mongolian;
     // Mongo doesn't return the db proper when connected without
     // authentication (as in local).
-    db = server.db('pantheon-app');
+    //this used to be pantheon-app
+    db = server.db('faceflip');
 }
 
 exports.list = function(isGod, callback){

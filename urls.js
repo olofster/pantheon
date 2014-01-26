@@ -100,7 +100,7 @@ var Urls = {
         if (parsedUrl.hostname.match(/facebook.com$/) && parsedUrl.path.match(/^\/[a-zA-Z0-9\.-]+$/)){
 
 
-console.log('Adding with new Algo');
+            console.log('Adding with new Algo');
         // this.shouldInsertSite_(url, function(){
             var data = {
                 url: req.body.url,
@@ -114,7 +114,7 @@ console.log('Adding with new Algo');
             res.send('ADDED');
         } 
         else {
-console.log('Skipping with new Algo');
+            console.log('Skipping with new Algo');
             res.send('SKIPPED');
         }
         // }.bind(this), function(){

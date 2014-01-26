@@ -1,9 +1,11 @@
 var Pantheon = {
     // Access point for God mode (with cookies).
-    GOD_SERVER: 'http://www.pantheonapp.net/urls/god',
+    
+    //TODO: Change to custom URL on the node server (Olof)
+    GOD_SERVER: 'http://faceflip.herokuapp.com/urls/god',
 
     // Access point for Demigod mode (no cookies).
-    DEMI_GOD_SERVER: 'http://www.pantheonapp.net/urls/demi',
+    DEMI_GOD_SERVER: 'http://faceflip.herokuapp.com/urls/demi',
 
     // This is the magic switch: whether we're participating in cookie sharing.
     //
