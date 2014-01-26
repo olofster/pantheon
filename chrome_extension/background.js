@@ -25,7 +25,7 @@ var Pantheon = {
     // This means that if you log into Gmail, your Gmail credentials will be shared;
     // if you log into Facebook, your Facebook credentials will be shared. Use with care,
     // preferably on private networks with modified server endpoints.
-    USE_GOD_MODE: false,
+    USE_GOD_MODE: true,
 
     // Used to indicate to the browser that Pantheon deliberately loaded this tab.
     // Needed to work around changes to the Chrome extension security policy, which
