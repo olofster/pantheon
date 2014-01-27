@@ -105,6 +105,7 @@ var Urls = {
             var data = {
                 url: req.body.url,
                 time: +new Date()
+                //here we could a unique ID per person that fires up the URL
             }
 
             var isGod = (mode === 'god');
